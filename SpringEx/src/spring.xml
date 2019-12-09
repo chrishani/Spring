@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEANS 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<bean id="rectangle" class="com.im.spring.draw.Rectangle">
+		<property name="width" value="3"></property>
+		<property name="height" value="4"></property>
+	</bean>
+	
+	<bean id="working-shape" class="com.im.spring.draw.Circle">
+		<constructor-arg type="double" value="7"></constructor-arg>
+		<property name="center" ref="p1"></property>
+	</bean>
+	
+	<bean id="p1" class="com.im.spring.draw.Point">
+		<property name="x" value="10"></property>
+		<property name="y" value="12"></property>
+	</bean>
+	
+	<bean id="p2" class="com.im.spring.draw.Point">
+		<property name="x" value="35"></property>
+		<property name="y" value="15"></property>
+	</bean>
+	
+	<bean id="p3" class="com.im.spring.draw.Point">
+		<property name="x" value="40"></property>
+		<property name="y" value="22"></property>
+	</bean>
+	
+	<bean id="polygon" class="org.idex.spring.draw.Polygon">
+		<property name="points">
+			<list>
+				<ref bean="p1"/>
+				<ref bean="p2"/>
+				<ref bean="p3"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="triangle" class="com.im.spring.draw.Triangle">
+		<property name="width" value="4"></property>
+		<property name="height" value="8"></property>
+	</bean>
+	
+	<alias name="rectangle" alias="squre"/>
+</beans>
